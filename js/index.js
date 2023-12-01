@@ -34,10 +34,10 @@ const winner = (user, pc) => {
         (user === "papel" && pc === "piedra") ||
         (user === "tijera" && pc === "papel")
     ) {
-        alert (`Ganaste! La PC eligió: ${pc}`);
+        alert ("Ganaste! :)");
 
     } else {
-        alert (`Perdiste :( la pc eligió ${pc}`);
+        alert ("Perdiste :(");
     }
 }
 
@@ -45,9 +45,9 @@ let instruction = "Elige: piedra, papel o tijera";
 
 
 const playGame = () => {
-  let user = userOption(instruction);
-  let pc = pcOption();
-
+    let user = userOption(instruction);
+    let pc = pcOption();
+    
     alert(`Tu elección: ${user} \n Elección de la pc: ${pc}`);
     winner(user,pc);
 
