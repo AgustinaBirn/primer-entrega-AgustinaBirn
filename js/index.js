@@ -1,6 +1,4 @@
 
-
-
 const userOption = instruction => {
     let option = prompt(instruction).toLowerCase();
     
@@ -9,7 +7,7 @@ const userOption = instruction => {
       alert("Respuesta invalida. Elige: piedra, papel o tijera");
       option = prompt(instruction).toLowerCase();
     }
-  /////////////////////////////////////////////////////
+
     if (option === "piedra") { 
       alert("Elegiste piedra.");
     } else if (option === "papel") {
@@ -19,7 +17,6 @@ const userOption = instruction => {
     }
 
     return option;
- ////////////////////////////////////////////////////////
 }
 
 const pcOption = () => {
@@ -29,6 +26,7 @@ const pcOption = () => {
 }
 
 const winner = (user, pc) => {
+
     if (user === pc) {
         alert ("Es un empate!");
     } else if (
@@ -36,32 +34,25 @@ const winner = (user, pc) => {
         (user === "papel" && pc === "piedra") ||
         (user === "tijera" && pc === "papel")
     ) {
-        alert ("Ganaste!");
+        alert (`Ganaste! La PC eligió: ${pc}`);
+
     } else {
         alert (`Perdiste :( la pc eligió ${pc}`);
     }
 }
 
-
+let instruction = "Elige: piedra, papel o tijera";
 
 
 const playGame = () => {
-    let instruction = "Elige: piedra, papel o tijera";
-    let user = userOption(instruction);
-    let pc = pcOption();
+  let user = userOption(instruction);
+  let pc = pcOption();
 
     alert(`Tu elección: ${user} \n Elección de la pc: ${pc}`);
+    winner(user,pc);
 
-    let result = winner(user, pc);
-    alert(result);
-    if (result === "Ganaste!") {
-        userWins++;
-    } else if (result.includes("Perdiste")) {
-        pcWins++;
-    }
 }
-let userWins = 0;
-let pcWins = 0;
+
 
 for (let i = 0; i <= 3; i++) {
 
